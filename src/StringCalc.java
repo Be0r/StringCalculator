@@ -10,7 +10,7 @@ public class StringCalc {
 
     public static void main(String[] args) {
         System.out.println("Enter an expression [\"a\" + \"b\", \"a\" - \"b\", \"a\" *x, \"a\" /x] where a and b are strings, and x is a number from 1 to 10 + Enter");
-//      Считываем строку userInput которую ввёл пользователь
+        //Считываем строку userInput которую ввёл пользователь
         String userInput = scanner.nextLine();
         operation = metodOperation(userInput);
         splitLengthString(userInput);
@@ -29,7 +29,7 @@ public class StringCalc {
             } else {
                 System.out.println(result);
             }
-        } else {              //            blocks.length == 4;
+        } else {              //blocks.length == 4;
             String st01 = blocks[1];
             String st03 = blocks[3];
             number = Integer.parseInt(st03);
@@ -43,10 +43,10 @@ public class StringCalc {
         }
     }
 
-    //         Метод поиска знака операции
+    //Метод поиска знака операции
     private static char metodOperation(String userInput) {
         char[] uchar = new char[26];
-//      Заполняем символьный массив символами строки которую ввел пользователь и ищем знак операции
+        //Заполняем символьный массив символами строки которую ввел пользователь и ищем знак операции
         for (int i = 0; i < userInput.length(); i++) {
             uchar[i] = userInput.charAt(i);
             if (uchar[i] == '+') {
@@ -65,7 +65,7 @@ public class StringCalc {
         return operation;
     }
 
-
+    //калькулятор со второй строкой
     public static String calculated(String num1, char op, String num2) {
         switch (op) {
             case '+' -> result = num1 + num2;
@@ -81,6 +81,7 @@ public class StringCalc {
         return result;
     }
 
+    //калькулятор с цифрами
     public static String calculated(String num1, char op, int num) {
         switch (op) {
             case '*':
@@ -91,6 +92,7 @@ public class StringCalc {
                     result += num1;
 
 //Не знаю как убрать null при умножении
+                    //UPD решил.
                 } break;
             case '/':
                 if (num > 10) {
